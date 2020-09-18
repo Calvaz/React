@@ -1,15 +1,15 @@
 import React from 'react'
+import RitornaStato from './ritorna.js'
 
 class Oggetti extends React.Component {
     constructor(props) {
         super(props);
         this.state = {name: "oggettissimo"};
+        this.state = {xy: true};
     }
 
-    
-    printaCiao = (x) => {
+    printaCiao(x) {
         alert(x);
-        console.log(x);
     }
 
     componentDidMount() {
@@ -20,16 +20,41 @@ class Oggetti extends React.Component {
         alert('carico i props');
         return {name: props.cacca};
     }
+
+    tolgoCase = () => {
+        this.setState({xy : false})
+    }
     
     render() {
+        let cose;
+        if (this.state.xy) {
+            cose = <Casa />
+        };
+
         return (
-        <div>
-            <h2>Hi, I am an object! {this.props.cacca + '   ' + this.props.numero} </h2>
-            <button onClick={() => this.printaCiao('xciaoao')}>clicco</button>
-        </div>
+            <div>
+                {cose}
+            <button onClick={() => this.printaCiao("1")}>tolgooo</button>
+            </div>
         );
     }
 
 }
 
+class Casa extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {name: "casa"};
+    }
+
+    componentWillUnmount = () => {
+        alert('sto togliendo!!!!!');
+        console.log('sto togliendo');
+    }
+    
+    render () {
+        return true;
+    };
+    
+}
 export default Oggetti;
