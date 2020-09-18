@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './index.css'
+import RitornaStato from './ritorna.js'
+import Oggetti from './oggetti.js'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class ale {
+  name = "ale"
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function ciao() {
+  var a = 1;
+  return a;
+}
+
+const myfirstelement = <p>"Hello ciao" {ale.name}</p>
+const mysecondelement = React.createElement('p', {}, 'I do not use JSX!');
+const mythirdelement = (<div>
+                          <h1>I am a Header too.</h1>
+                          <Oggetti cacca="pupù" numero="2"/>
+                          <input className="andrea" type="text" value=""></input>
+                          <button type="submit">invia</button>
+                        </div>);
+
+
+ReactDOM.render(myfirstelement, document.getElementById('root'));
+ReactDOM.render(mythirdelement, document.getElementById('ale'));
+//ReactDOM.render(<RitornaStato />, document.getElementById('andre'));
