@@ -1,0 +1,17 @@
+button.menu {
+    background-color: rgb(4, 64, 71);
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+button.menu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+button.menu a:hover {
+    background-color: #777;
+  }
